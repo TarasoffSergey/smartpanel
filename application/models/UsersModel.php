@@ -46,6 +46,9 @@ class UsersModel extends CI_model {
             
         }
         
+        /*
+         * Функція авторизації користувача
+         */
         public function check_auth()
         {
             $this->load->database();
@@ -73,6 +76,10 @@ class UsersModel extends CI_model {
             }
         }
         
+        
+        /*
+         * Функція для отримання коротких свідчень про користувача
+         */
         public function get_user_details_short()
         {
             $this->load->database();
@@ -86,5 +93,41 @@ class UsersModel extends CI_model {
             
             return $user_details;
         }
-	
+        
+        
+        /*
+         * Функція для отримання повних свідчень про користувача
+         */
+	public function get_user_details()
+        {
+            $this->load->database();
+            $this->db->select('*');
+            $this->db->from('users');
+            $this->db->where('user_id', $this->session->user_id);
+            
+            $query = $this->db->get();
+            
+            $user_details = $query->row();
+            
+            return $user_details;
+        }
+
+
+
+
+        /*
+         * Функція для оновлення даних користувача
+         */
+        public function update_user_details()
+        {
+            $this->load->database();
+            
+            $this->db->set('firstname', $this->input->post('firstName'));
+            $this->db->set('secondname', $this->input->post('secondName'));
+            $this->db->set('phone', $this->input->post('phoneNo'));
+            
+            $this->db->where('user_id', $this->session->user_id);
+            $this->db->update('users');
+            return;
+        }
 }

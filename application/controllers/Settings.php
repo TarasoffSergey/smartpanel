@@ -35,17 +35,29 @@ class Settings extends CI_Controller{
         $viewdata['current_language'] = $this->setlanguage->set_current_language();
         //-------------------------------------------------------
         
+        // якщо отримали дані з форми зміни даних про користувача, змінюємо їх -----
+        if($this->input->post('update') != NULL)
+        {
+            $this->load->model('UsersModel');
+            $this->UsersModel->update_user_details();
+            redirect(base_url().'settings/profile/');
+        }
+        //--------------------------------------------------------------------------
+        
         // отримаємо данні про користувача та передаємо їх виду --------
         $this->load->model('UsersModel');
-        $user_detail_short = $this->UsersModel->get_user_details_short();
+        $viewdata['without_name'] = NULL;
+        $user_detail = $this->UsersModel->get_user_details();
 
-        if($user_detail_short->firstname == "" and $user_detail_short->secondname == "")
+        if($user_detail->firstname == "" and $user_detail->secondname == "")
         {
-            $viewdata['without_name'] = $user_detail_short->email;
+            $viewdata['without_name'] = $user_detail->email;
         }
         
-        $viewdata['first_name'] = $user_detail_short->firstname;
-        $viewdata['second_name'] = $user_detail_short->secondname;
+        $viewdata['first_name'] = $user_detail->firstname;
+        $viewdata['second_name'] = $user_detail->secondname;
+        $viewdata['phone'] = $user_detail->phone;
+        
         
         //--------------------------------------------------------------
         

@@ -57,13 +57,14 @@
                     </ul>
                     <div class="tab-content">
                         <div class="active tab-pane" id="details">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" action="<?php echo base_url();?>settings/profile/" method="post">
                                 
                                 <div class="form-group">
                                     <label for="inputFirstName" class="col-sm-2 control-label">Ім'я</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputFirstName" placeholder="<?php echo $first_name;?>">
+                                        <input name="firstName" type="text" class="form-control" id="inputFirstName" 
+                                        placeholder="<?php echo $first_name;?>" value="<?php echo $first_name;?>">
                                     </div>
                                 </div>
                                 
@@ -71,15 +72,8 @@
                                     <label for="inputSecondName" class="col-sm-2 control-label">Прізвище</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputSecondName" placeholder="<?php echo $second_name;?>">
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-2 control-label">e-mail</label>
-
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="mail@tarasov.com.ua">
+                                        <input name="secondName" type="text" class="form-control" id="inputSecondName" 
+                                               placeholder="<?php echo $second_name;?>" value="<?php echo $second_name;?>">
                                     </div>
                                 </div>
                                 
@@ -87,13 +81,14 @@
                                     <label for="inputPhone" class="col-sm-2 control-label">телефон</label>
 
                                     <div class="col-sm-10">
-                                        <input type="tel" class="form-control" id="inputPhone" placeholder="телефон">
+                                        <input name="phoneNo" type="tel" class="form-control" id="inputPhone" 
+                                               placeholder="<?php echo $phone;?>" value="<?php echo $phone;?>">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Зберегти</button>
+                                        <button type="submit" class="btn btn-danger" name="update" value="update">Зберегти</button>
                                     </div>
                                 </div>
                                 
