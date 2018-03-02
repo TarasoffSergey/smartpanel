@@ -60,6 +60,7 @@
         <input name="user_password_repeat" type="password" class="form-control" placeholder="<?php echo lang('gui_sign_repeat_password');?>">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
+        
         <?php echo form_error('g-recaptcha-response'); ?>
         <div class="g-recaptcha" data-sitekey="6Lf2kEcUAAAAAAoWDjRoLMhRs1721Ugjuek_j2Uv" style="margin-bottom: 1rem;"></div>
       
