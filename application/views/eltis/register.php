@@ -40,7 +40,7 @@
   <div class="register-box-body">
     <p class="login-box-msg"><?php echo lang('gui_sigin_header');?></p>
 
-    <form action="<?php echo base_url();?>register/" method="post">
+    <form action="<?php echo base_url();?>welcome/register/" method="post">
 	
         <?php echo form_error('user_email'); ?>
       <div class="form-group has-feedback">
