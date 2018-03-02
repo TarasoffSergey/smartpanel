@@ -42,7 +42,7 @@ class UsersModel extends CI_model {
                     );
             $this->db->insert('users', $data);
             $this->session->set_flashdata('registered', 'YES');
-            redirect('/welcome/register/', "refresh");
+            redirect(base_url().'/welcome/register/', "refresh");
             
         }
         
