@@ -39,4 +39,12 @@ $lang['gui_sigin_error_header']                 =	"Register Error!";
 $lang['gui_sigin_error_message']                =       "This e-mail is already registered in our system. Please use the login page to log in, or go to the password reminder page.";
 //----------------------------------------------
 
+//-----сторінка успішої реєстрації--------------
+//
+//----------------------------------------------
+$lang['gui_sigin_ok_header']                                    =                       "Аккаунт створено.";
+$lang['gui_sign_ok']                                            =                       "Закінчення реєстрації.";
+$lang['gui_sigin_ok_message']                                   =                       "На ваш e-mail було надіслано листа для активації аккаунта. Будь ласка перевірте пошту, та дотримуйтесь інструкцій з нього, для активації Вашого облікового запису. Як що Ви не отримали листа - перевірте будь ласка папку СПАМ.";
+
+
 // $lang['']=			"";
