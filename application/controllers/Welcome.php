@@ -110,7 +110,7 @@ class Welcome extends CI_Controller {
             if($this->UsersModel->check_email() == true)
             {
                 $this->session->set_flashdata('email_already_exist', 'YES');
-		redirect('/welcome/register');
+		redirect(base_url().'/welcome/register');
             }
             else
             {
