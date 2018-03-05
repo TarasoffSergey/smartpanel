@@ -18,7 +18,9 @@
           
         </div>
         <div class="pull-left info">
-          <p>Сергій Тарасов</p>
+            <p>
+                <?php echo $without_name . $first_name . " ". $second_name; ?>
+            </p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>

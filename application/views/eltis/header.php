@@ -91,7 +91,9 @@ desired effect
                         echo img($user_avatar);
                   ?>
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Сергій Тарасов</span>
+              <span class="hidden-xs">
+                  <?php echo $without_name . $first_name . " ". $second_name; ?>
+              </span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -106,7 +108,7 @@ desired effect
                         echo img($user_avatar);
                   ?>
                 <p>
-                  Сергій Тарасов - Служба підтимки
+                  <?php echo $without_name . $first_name . " ". $second_name; ?>
                   <small>Зареєстрований з Лист. 2012</small>
                 </p>
               </li>

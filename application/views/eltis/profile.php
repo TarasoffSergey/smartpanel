@@ -96,6 +96,21 @@
                         </div>
                         <div class="tab-pane" id="activity">
                             <h4>В розробці</h4>
+                            <?php
+                                $array1 = array(
+                                    'familiya' => 'tarasov',
+                                    'imya' => 'sergey'
+                                );
+                                print_r($array1);
+                                echo "<br>";
+                                $array2 = array(
+                                    'otchestvo' => 'leonidovich'
+                                );
+                                print_r($array2);
+                                echo "<br>";
+                                $array3 = $array1 + $array2;
+                                print_r($array3);
+                            ?>
                         </div>
                     </div>
                 </div>

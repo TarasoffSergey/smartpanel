@@ -28,10 +28,23 @@ class Dashboard extends CI_Controller {
             $viewdata['current_language'] = $this->setlanguage->set_current_language();
             //-------------------------------------------------------    
             
+            // отримаємо данні про користувача та передаємо їх виду --------
+            $this->load->model('UsersModel');
+            $viewdata['without_name'] = NULL;
+            $user_detail = $this->UsersModel->get_user_details_short();
+
+            if($user_detail->firstname == "" and $user_detail->secondname == "")
+            {
+                $viewdata['without_name'] = $user_detail->email;
+            }
+
+            $viewdata['first_name'] = $user_detail->firstname;
+            $viewdata['second_name'] = $user_detail->secondname;
             
             
-            $this->load->view('eltis/header');
-            $this->load->view('eltis/left_menu');
+            
+            $this->load->view('eltis/header', $viewdata);
+            $this->load->view('eltis/left_menu', $viewdata);
             $this->load->view('eltis/dashboard', $viewdata);
             $this->load->view('eltis/footer');
 	}

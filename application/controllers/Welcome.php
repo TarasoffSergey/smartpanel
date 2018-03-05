@@ -46,8 +46,22 @@ class Welcome extends CI_Controller {
         $this->lang->load('gui', $this->session->locale);
         //-------------------------------------------------------
 		
-	//встановлюємо title згідно з перекалодом
-	$viewdata['title'] = $this->lang->line('gui_login_title');
+	// data for parsing
+        $dataTemplate = array
+                (
+            'title'                         =>  $this->lang->line('gui_login_title'),
+            'gui_login_input_your_data'     =>  $this->lang->line('gui_login_input_your_data'),
+            'gui_login_remember_me'         =>  $this->lang->line('gui_login_remember_me'),
+            'gui_login_login'               =>  $this->lang->line('gui_login_login'),
+            'gui_login_enter_email'         =>  $this->lang->line('gui_login_enter_email'),
+            'gui_login_enter_password'      =>  $this->lang->line('gui_login_enter_password'),
+            'gui_login_login_via'           =>  $this->lang->line('gui_login_login_via'),
+            'gui_login_forgot_password'     =>  $this->lang->line('gui_login_forgot_password'),
+            'gui_login_create_account'      =>  $this->lang->line('gui_login_create_account'),
+            'gui_login_or'                  =>  $this->lang->line('gui_login_or'),
+            'flag_picture'                  =>  $this->setlanguage->set_flag_picture(),
+            'current_language'              =>  $this->setlanguage->set_current_language()
+                );
 	//-------------------------------------------------------
 		
 		
@@ -68,9 +82,10 @@ class Welcome extends CI_Controller {
             }
 	}
 
-
-	// заватнажуємо види з динамічними даними
-	$this->load->view('eltis/login', $viewdata);
+        // load template with parsing data
+        $this->parser->parse('eltis/login', $dataTemplate);
+        //-------------------------------------------------
+        
 	}
 
 	public function register()
@@ -94,6 +109,13 @@ class Welcome extends CI_Controller {
 	//встановлюємо title згідно з перекалодом
 	$viewdata['title'] = $this->lang->line('gui_sigin_title');
 	//-------------------------------------------------------
+        
+        // data for parsing --------------------------------------
+        $dataTemplate = array
+                (
+            'title'                         =>  $this->lang->line('gui_sigin_title')
+                );
+        //--------------------------------------------------------
 		
 		
 	$this->form_validation->set_rules('user_email', 'lang:gui_login_email_field', 'required|valid_email');

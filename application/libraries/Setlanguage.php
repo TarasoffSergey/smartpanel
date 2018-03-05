@@ -13,13 +13,13 @@ class Setlanguage {
 	{
 		$this->CI->load->library('session');
 		if ($this->CI->session->locale == 'en') {
-			return 'design/img/flags/United-Kingdom.png';
+			return base_url().'design/img/flags/United-Kingdom.png';
 		}
 		elseif ($this->CI->session->locale == 'ru') {
-			return 'design/img/flags/Russia.png';
+			return base_url().'design/img/flags/Russia.png';
 		}
 		else {
-			return 'design/img/flags/Ukraine.png';
+			return base_url().'design/img/flags/Ukraine.png';
 		}
 	
 	}
