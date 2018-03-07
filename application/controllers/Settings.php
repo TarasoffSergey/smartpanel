@@ -62,8 +62,8 @@ class Settings extends CI_Controller{
         //--------------------------------------------------------------
         
         
-        $this->load->view('eltis/header');
-        $this->load->view('eltis/left_menu');
+        $this->load->view('eltis/header', $viewdata);
+        $this->load->view('eltis/left_menu', $viewdata);
         $this->load->view('eltis/profile', $viewdata);
         $this->load->view('eltis/footer');
     }

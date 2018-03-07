@@ -42,8 +42,8 @@ $lang['gui_sigin_error_message']                =       "This e-mail is already 
 //-----сторінка успішої реєстрації--------------
 //
 //----------------------------------------------
-$lang['gui_sigin_ok_header']                                    =                       "Аккаунт створено.";
-$lang['gui_sign_ok']                                            =                       "Закінчення реєстрації.";
+$lang['gui_sigin_ok_header']                                    =                       "Account has been created";
+$lang['gui_sign_ok']                                            =                       "Finished registration.";
 $lang['gui_sigin_ok_message']                                   =                       "На ваш e-mail було надіслано листа для активації аккаунта. Будь ласка перевірте пошту, та дотримуйтесь інструкцій з нього, для активації Вашого облікового запису. Як що Ви не отримали листа - перевірте будь ласка папку СПАМ.";
 
 
