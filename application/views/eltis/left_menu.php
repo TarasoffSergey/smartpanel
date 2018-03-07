@@ -50,6 +50,7 @@
                 </span>
             </a>
             <ul class="treeview-menu">
+                <!--
                 <li><a href="#"><i class="fa fa-circle-o"></i>Балкон 1</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Балкон 2</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Кухня</a></li>
@@ -57,6 +58,7 @@
                 <li><a href="#"><i class="fa fa-circle-o"></i>Спальня</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Коридор</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Вулиця</a></li>
+                -->
             </ul>
         </li>
         <li><a href="<?php echo base_url(); ?>settings/"><i class="fa fa-cog"></i> <span>Налаштування</span></a></li>

@@ -27,7 +27,7 @@
                         <h3 class="box-title">Діаграми та віджети</h3>
                     </div>
                     <div class="box-body">
-                        <a class="btn btn-app">
+                        <a class="btn btn-app" href="?add=true">
                             <li class="fa fa-dashboard"></li> Додати віджет
                         </a>
                         <a class="btn btn-app">

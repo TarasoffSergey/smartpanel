@@ -41,7 +41,32 @@ class Dashboard extends CI_Controller {
             $viewdata['first_name'] = $user_detail->firstname;
             $viewdata['second_name'] = $user_detail->secondname;
             
-            
+            if ($this->input->get('add') == 'true') {
+                
+                $fields = array
+                        (
+                    'device_id' => array(
+                        'type' => 'INT',
+                        'constraint' => 10,
+                        'unsigned' => TRUE
+                    ),
+                    'data_date' => array(
+                        'type' => 'DATETIME'
+                    ),
+                    'data_values' => array(
+                        'type' => 'JSON'
+                    )
+                        );
+                
+                $this->load->database();
+                $this->load->dbforge();
+                $this->dbforge->add_field($fields);
+                
+                $this->dbforge->create_table($this->session->user_id.'_users_devices', TRUE);
+                
+                echo "add";
+                
+            }
             
             $this->load->view('eltis/header', $viewdata);
             $this->load->view('eltis/left_menu', $viewdata);
