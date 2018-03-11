@@ -61,16 +61,34 @@ class Dashboard extends CI_Controller {
                 $this->load->database();
                 $this->load->dbforge();
                 $this->dbforge->add_field($fields);
-                
                 $this->dbforge->create_table($this->session->user_id.'_users_devices', TRUE);
                 
                 echo "add";
                 
             }
             
+            // left menu data for parsing
+            $leftMenuData = array(
+                'user_avatar' => '<img src="'. base_url().'design/img/user_default.jpg" alt="User Image" class="img-circle" />',
+                
+                
+                'menu_places_items' => array(
+                    array('place_item' => 'place1', 'plase_item_link' => base_url().'dashboard/places/1/'),
+                    array('place_item' => 'place2'),
+                    array('place_item' => 'place3')
+                )
+            );
+            //---------------------------
+            
             $this->load->view('eltis/header', $viewdata);
-            $this->load->view('eltis/left_menu', $viewdata);
+            //$this->load->view('eltis/left_menu');
+            $this->parser->parse('eltis/left_menu', $leftMenuData);
             $this->load->view('eltis/dashboard', $viewdata);
             $this->load->view('eltis/footer');
 	}
+        
+        public function places($places)
+        {
+            echo ("places".$places);
+        }
 }
