@@ -32,11 +32,11 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">МЕНЮ</li>
+        <li class="header">{left_menu_title}</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="<?php echo base_url();?>dashboard/"><i class="fa fa-dashboard"></i> <span>Панель</span></a></li>
+        <li class="active"><a href="<?php echo base_url();?>dashboard/"><i class="fa fa-dashboard"></i> <span>{left_menu_panel}</span></a></li>
         <li class="treeview">
-            <a href="#"><i class="fa fa-object-ungroup"></i> <span>Мої об'єкти</span>
+            <a href="#"><i class="fa fa-object-ungroup"></i> <span>{left_menu_my_objects}</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
@@ -49,13 +49,10 @@
 
                 
                 <li>---x---</li>
-                <li><a href="#"><i class="fa fa-plus text-yellow"></i>Додати новий об'єкт</a></li>
+                <li><a href="#"><i class="fa fa-plus text-yellow"></i>{left_menu_create_new_object}</a></li>
             </ul>
         </li>
-        <li><a href="<?php echo base_url(); ?>settings/"><i class="fa fa-cog"></i> <span>Налаштування</span></a></li>
-        <li class="header">АДМІНІСТРУВАННЯ</li>
-        <li><a href="#"><i class="fa fa-users"></i> <span>Користувачі</span></a></li>
-        <li><a href="#"><i class="fa fa-users"></i> <span>Користувачі</span></a></li>
+        <li><a href="<?php echo base_url(); ?>settings/"><i class="fa fa-cog"></i> <span>{left_menu_settings}</span></a></li>
         
       </ul>
       <!-- /.sidebar-menu -->

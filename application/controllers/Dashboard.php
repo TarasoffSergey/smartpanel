@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller {
         }
         
         $this->load->library('setlanguage');
+
     }
 
     public function index()
@@ -68,20 +69,11 @@ class Dashboard extends CI_Controller {
             }
             
             // left menu data for parsing
-            $leftMenuData = array(
-                'user_avatar' => '<img src="'. base_url().'design/img/user_default.jpg" alt="User Image" class="img-circle" />',
-                
-                
-                'menu_places_items' => array(
-                    array('place_item' => 'place1', 'plase_item_link' => base_url().'dashboard/places/1/'),
-                    array('place_item' => 'place2'),
-                    array('place_item' => 'place3')
-                )
-            );
+            $this->load->library('leftmenu');
+            $leftMenuData = $this->leftmenu->left_menu_data_parsing();
             //---------------------------
             
             $this->load->view('eltis/header', $viewdata);
-            //$this->load->view('eltis/left_menu');
             $this->parser->parse('eltis/left_menu', $leftMenuData);
             $this->load->view('eltis/dashboard', $viewdata);
             $this->load->view('eltis/footer');

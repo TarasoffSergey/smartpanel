@@ -57,13 +57,15 @@ class Settings extends CI_Controller{
         $viewdata['first_name'] = $user_detail->firstname;
         $viewdata['second_name'] = $user_detail->secondname;
         $viewdata['phone'] = $user_detail->phone;
-        
-        
         //--------------------------------------------------------------
         
+        // left menu data for parsing
+        $this->load->library('leftmenu');
+        $leftMenuData = $this->leftmenu->left_menu_data_parsing();
+        //---------------------------
         
         $this->load->view('eltis/header', $viewdata);
-        $this->load->view('eltis/left_menu', $viewdata);
+        $this->parser->parse('eltis/left_menu', $leftMenuData);
         $this->load->view('eltis/profile', $viewdata);
         $this->load->view('eltis/footer');
     }
