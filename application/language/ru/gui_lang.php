@@ -57,6 +57,9 @@ $lang['left_menu_title']                        =   "МЕНЮ";
 $lang['left_menu_settings']                     =   "Настройки";
 $lang['left_menu_panel']                        =   "Панель";
 $lang['left_menu_my_objects']                   =   "Мои объекты";
+$lang['left_menu_serch']                        =   "Поиск...";
+
+$lang['gui_main_title']                         =   "Элтис Техно | IoT";
 //----------------------------------------------
 
 // $lang['']=			"";

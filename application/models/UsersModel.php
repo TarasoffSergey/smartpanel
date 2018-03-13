@@ -130,4 +130,29 @@ class UsersModel extends CI_model {
             $this->db->update('users');
             return;
         }
+
+        /*
+        * Function return users detail: First Name and Second Name, or e-mail
+        * if user have not complete First Name and Second Name
+        */
+        public function get_user_name_detail()
+        {
+            $this->load->database();
+            $this->db->select('firstname, secondname, email');
+            $this->db->from('users');
+            $this->db->where('user_id', $this->session->user_id);
+            $query = $this->db->get();
+            
+            $details = $query->row();
+
+            if($details->firstname == "" and $details->secondname == "")
+            {
+                return $details->email;
+            }
+            else
+            {
+                return $details->firstname." ".$details->secondname;
+            }
+
+        }
 }

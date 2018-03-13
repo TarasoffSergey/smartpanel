@@ -60,6 +60,7 @@ $lang['left_menu_title']                        =   "МЕНЮ";
 $lang['left_menu_settings']                     =   "Налаштування";
 $lang['left_menu_panel']                        =   "Панель";
 $lang['left_menu_my_objects']                   =   "Мои обʼєкти";
+$lang['left_menu_serch']                        =   "Пошук...";
 //----------------------------------------------
 
 // $lang['']=			"";
